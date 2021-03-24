@@ -84,6 +84,7 @@ class DoublyLinkedList:
         else:
             node = Node(value, current_node, current_node.prev)
             current_node.prev.next = node
+            current_node.next.prev = node
         return True
 
     def remove(self, index):

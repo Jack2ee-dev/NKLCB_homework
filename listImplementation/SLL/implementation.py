@@ -78,6 +78,7 @@ class SinglyLinkedList:
             return False
 
         previous_node.next = current_node.next
+        del current_node
         return True
 
     def print(self):
