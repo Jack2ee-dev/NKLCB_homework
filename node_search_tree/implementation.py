@@ -86,7 +86,7 @@ class BinaryTree:
             nonlocal isFound
             if node is None:
                 return
-            
+
             if node.value == value:
                 isFound = True
                 return
@@ -95,6 +95,24 @@ class BinaryTree:
             recursive(node.right)
 
         recursive(self.root)
+        print(isFound)
+
+    def dfs_with_stack(self, value):
+        stack = [self.root]
+        isFound = False
+
+        while len(stack) > 0:
+            pop = stack.pop()
+            if pop is None:
+                return False
+            
+            if pop.value == value:
+                isFound = True
+                return True
+            
+            stack.append(pop.left)
+            stack.append(pop.right)
+
         print(isFound)
 
 if __name__ == "__main__":
@@ -110,4 +128,7 @@ if __name__ == "__main__":
         bt.bfs(i)
     print("--------- dfs ---------")
     for i in range(1, 20, 1):
+        bt.dfs(i)
+    print("--------- dfs_with_stack ---------")
+    for i in range(19, 0, -1):
         bt.dfs(i)
