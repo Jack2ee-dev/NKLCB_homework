@@ -28,7 +28,7 @@ class BinaryTree:
             s += str(node.value) + " "
             recursive(node.left)
             recursive(node.right)
-        
+
         recursive(self.root)
         print(s)
 
@@ -60,11 +60,10 @@ class BinaryTree:
         recursive(self.root)
         print(s)
 
-
     def bfs(self, value):
         queue = [self.root]
         isFound = False
-         
+
         while len(queue) > 0:
             dequed = queue.pop(0)
             if dequed is None:
@@ -105,15 +104,16 @@ class BinaryTree:
             pop = stack.pop()
             if pop is None:
                 return False
-            
+
             if pop.value == value:
                 isFound = True
                 return True
-            
+
             stack.append(pop.left)
             stack.append(pop.right)
 
         print(isFound)
+
 
 if __name__ == "__main__":
     bt = BinaryTree([x for x in range(1, 11)])
