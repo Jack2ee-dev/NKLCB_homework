@@ -29,7 +29,6 @@ class LinearQueue:
             print("StackUnderflow")
             return None
         value = self.array[self.front]
-        self.front += 1
         return value
 
     def print(self):
@@ -48,26 +47,27 @@ class LinearQueue:
         print(values)
 
 
-queue = LinearQueue(5)
-queue.print()
+if __name__ == "__main__":
+    queue = LinearQueue(5)
+    queue.print()
 
-queue.put(1)
-queue.put(2)
-queue.put(3)
-queue.print()
+    queue.put(1)
+    queue.put(2)
+    queue.put(3)
+    queue.print()
 
-print(queue.get())
-print(queue.get())
-print(queue.get())
-print(queue.get())
-queue.print()
+    print(queue.get())
+    print(queue.get())
+    print(queue.get())
+    print(queue.get())
+    queue.print()
 
-queue.put(4)
-queue.put(5)
-queue.put(6)
-queue.print()
+    queue.put(4)
+    queue.put(5)
+    queue.put(6)
+    queue.print()
 
-print(queue.get())
-print(queue.get())
-print(queue.get())
-queue.print()
+    print(queue.get())
+    print(queue.get())
+    print(queue.get())
+    queue.print()
